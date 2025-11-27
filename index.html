@@ -12,13 +12,17 @@
     <div class="container">
         <nav>
             <img src="images/logo (1) (1).png" class="logo">
-            <ul>
-                <li> <a href="#">Home</a></li>
-                <li> <a href="#">About</a></li>
-                <li> <a href="#">Services</a></li>
-                <li> <a href="#">Portfolio</a></li>
-                <li> <a href="#">Contact</a></li>
+            <ul id="sidemenu">
+                
+                <li> <a href="#header">Home</a></li>
+                <li> <a href="#about">About</a></li>
+                <li> <a href="#services">Services</a></li>
+                <li> <a href="#portfolio">Portfolio</a></li>
+                <li> <a href="#contacts">Contact</a></li>
+                <i class="fas fa-xmark" onclick="closemenu()"></i>
+                
             </ul>
+            <i class="fas fa-list" onclick="openmenu()"></i>
         </nav>
         <div class="header-text">
             <p>FullStack Developer</p>
@@ -36,7 +40,13 @@
             </div>
             <div class="about-col-2">
                 <h1 class="sub-title">About Me</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, blanditiis commodi? Eos eligendi voluptate unde hic saepe sapiente alias molestias mollitia temporibus, delectus quaerat, iusto facere. Incidunt modi voluptates facilis..</p>
+                <p style="font-size: 18px;">I specialize in building responsive interfaces and robust backend systems.
+My work focuses on performance, scalability, and maintainable code architecture.
+I enjoy transforming concepts into functional, production-ready applications.
+I have experience with modern frameworks, APIs, and database management.
+Continuous learning and technical growth drive my development journey.
+I value clean code, systematic problem-solving, and thoughtful design.
+My goal is to create reliable digital solutions with real-world impact.</p>
                 <div class="tab-titles">
                     <p class="tab-links active-link" onclick="opentab('Skills')">Skills</p>
                     <p class="tab-links" onclick="opentab('Experience')">Experience</p>
@@ -72,19 +82,28 @@
             <div>
                 <i class="fa-solid fa-code"></i>
                 <h2>Web Design</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam at excepturi eaque autem aperiam voluptatibus consequatur accusantium quae debitis repellendus commodi in, dolores voluptate officia corrupti illum facilis, reprehenderit impedit?</p>
+                <p>I possess strong skills in web development, building responsive and optimized websites using modern frameworks and development practices.
+My focus is on clean architecture, performance, security, and seamless user flow across devices.
+I work efficiently with both frontend and backend technologies, API handling, and database integration.
+My goal is to deliver scalable, maintainable, and production-ready web solutions.</p>
                 <a href="#">Learn more</a>
             </div>
             <div>
                 <i class="fa-brands fa-app-store"></i>
                 <h2>App Design</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam at excepturi eaque autem aperiam voluptatibus consequatur accusantium quae debitis repellendus commodi in, dolores voluptate officia corrupti illum facilis, reprehenderit impedit?</p>
+                <p>I have hands-on experience in developing mobile and desktop applications with a focus on usability and technical efficiency.
+I work with frameworks and tools that support smooth data flow, intuitive navigation, and strong backend connectivity.
+My development approach ensures stability, responsiveness, and long-term scalability.
+I aim to build applications that solve real-world problems with consistency and reliability.</p>
                 <a href="#">Learn more</a>
             </div>
             <div>
                 <i class="fa-brands fa-uikit"></i>
                 <h2>UI/UX Design</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam at excepturi eaque autem aperiam voluptatibus consequatur accusantium quae debitis repellendus commodi in, dolores voluptate officia corrupti illum facilis, reprehenderit impedit?</p>
+                <p>I design user interfaces with clarity, visual balance, and accessible interaction in mind.
+My process includes research, wireframing, prototyping, testing, and refining designs based on feedback.
+I create layouts that are visually appealing while also improving user flow and retention.
+My objective is to deliver intuitive and meaningful digital experiences that users enjoy</p>
                 <a href="#">Learn more</a>
             </div>
         </div>
@@ -100,7 +119,7 @@
                 <div class="layer">
                     <h3>Truth or Dare App</h3>
                     <p>A playful Truth or Dare app with curated prompts and an easy-to-use interface. Users can adjust difficulty and enjoy an effortless group gaming experience</p>
-                    <a href="#"><i class="fa-solid fa-link"></i></a> 
+                    <a href="https://github.com/abirami202l/truth-or-dare-app.git"><i class="fa-solid fa-link"></i></a> 
                 </div>
             </div>
             <div class="work">
@@ -120,7 +139,39 @@
                 </div>
             </div>
         </div>
+        <a href="#" class="btn">See More</a>
     </div>
+</div>
+<!------------------contact------------>
+<div id="contacts">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fa-solid fa-paper-plane"></i>abirami10a2006@gmail.com</p>
+                <p><i class="fa-solid fa-mobile"></i>9344754269</p>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/its_abii_xoxo/?igsh=eTkxbTlibXQ4dzIx#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/abiramisenthilkumar2023/"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://github.com/abirami202l"><i class="fa-brands fa-github"></i></a>
+                </div>
+                <a href="images/abirami-2.pdf" download class="btn btn2">Download CV</a>
+            </div>
+            <div class="contact-right">
+                <form name='submit-to-google-sheet'>
+                    <input type="text",name="Name" placeholder="Your Name" required>
+                    <input type="email",name="Email" placeholder="Your Email" required>
+                    <textarea name="Message"row='6' placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn" style="color:#05da8c;background-color:#030130;">submit</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p><i class="fa-solid fa-heart"></i>Copyright @ Abirami Senthilkumar. Made by Me.<i class="fa-solid fa-heart"></i></p>
+    </div>
+
 </div>
 
 <script>
@@ -137,6 +188,26 @@
     document.getElementById(tabname).classList.add("active-tab")
     }
 
+</script>
+<script>
+    var sidemenu = document.getElementById("sidemenu");
+    function openmenu(){
+        sidemenu.style.right="0";
+    }
+    function closemenu(){
+        sidemenu.style.right="-200px";
+    }
+</script>
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbz-F6lECfSaRflKTDuaDaRVxYisg98wzNwHJJTKNI-V7GWTkkYx-xSMQ-QpBl1VLO1G/exec'
+  const form = document.forms['submit-to-google-sheet']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
+  })
 </script>
 </body>
 </html>
