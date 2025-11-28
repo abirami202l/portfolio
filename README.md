@@ -5,12 +5,6 @@ Built using **HTML | CSS | JavaScript** and deployed live on **Vercel**.
 
 ---
 
-### 🎥 Live Preview (Website Video)
-
-https://github.com/YourUsername/YourRepoName/assets/YourVideoID
-
----
-
 ### 🌍 Live Website
 
 🔗 **https://portfoliosite-six-rho.vercel.app/**
@@ -28,8 +22,13 @@ https://github.com/YourUsername/YourRepoName/assets/YourVideoID
 | JavaScript | Implicit/ Inline |
 | Vercel   | Deployment & CDN |
 
-
----
-
 ## 📁 Folder Structure
+portfolio/  
+├── index.html  
+├── style.css  
+├── README.md  
+├── .gitattributes  
+└── images/  
+  
+
 
