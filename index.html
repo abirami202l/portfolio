@@ -157,17 +157,21 @@ My objective is to deliver intuitive and meaningful digital experiences that use
                 </div>
                 <a href="images/abirami-2.pdf" download class="btn btn2">Download CV</a>
             </div>
-            <div class="contact-right">
-                <form name='submit-to-google-sheet'>
-                    <input type="text" name="Name" placeholder="Your Name" required>
-                    <input type="email" name="Email" placeholder="Your Email" required>
-                    <textarea name="Message"row='6' placeholder="Your Message"></textarea>
-                    <center><button type="submit" class="btn btn2" >submit</button></center>
-                </form>
+            <form id="contact-form">
+                <input type="hidden" name="access_key" value="b3bbc836-abeb-4f86-9300-40bbe9b87bba" />
+
+                <input type="text"   name="name"    placeholder="Your Name" required />
+                <input type="email"  name="email"   placeholder="Your Email" required />
+                <textarea name="message" rows="6"   placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn btn2">Submit</button>
+            </form>
+
+            <p id="form-status"></p>
 
             </div>
         </div>
     </div>
+
     <div class="copyright">
         <p><i class="fa-solid fa-heart"></i>Copyright @ Abirami Senthilkumar. Made by Me.<i class="fa-solid fa-heart"></i></p>
     </div>
@@ -199,15 +203,37 @@ My objective is to deliver intuitive and meaningful digital experiences that use
     }
 </script>
 <script>
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbzKlvyzIa63BDOoM8tqWpodsXeGN8r2Cn7pSsMDSCUo8hOd4YIB08GYVBn1zYpBdsfq/exec'
-  const form = document.forms['submit-to-google-sheet']
+  const form = document.getElementById('contact-form');
+  const statusEl = document.getElementById('form-status');
 
-  form.addEventListener('submit', e => {
-    e.preventDefault()
-    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      .then(response => console.log('Success!', response))
-      .catch(error => console.error('Error!', error.message))
-  })
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();              // stop normal submit + redirect
+    statusEl.textContent = 'Sending...';
+
+    try {
+      const formData = new FormData(form);
+
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        statusEl.textContent = 'Thanks for reaching out!';
+        form.reset();
+      } else {
+        statusEl.textContent = 'Something went wrong. Please try again.';
+        console.error(data);
+      }
+    } catch (err) {
+      statusEl.textContent = 'Network error. Please try again.';
+      console.error(err);
+    }
+  });
 </script>
+
+
 </body>
 </html>
